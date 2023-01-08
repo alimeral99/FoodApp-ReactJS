@@ -1,0 +1,66 @@
+.card__list {
+  margin-top: 40px;
+  margin-left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0.7;
+  position: relative;
+}
+
+.card {
+  height: 350px;
+  width: 220px;
+  margin: 10px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  text-align: center;
+  color: #333;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.card__img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 170px;
+  width: 100%;
+}
+
+.card__content > .card__title {
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 1px solid black;
+}
+.card__content > .card__price {
+  font-size: 30px;
+  margin: 10px 0;
+  font-weight: 250;
+}
+
+.card__btn {
+  margin-top: 20px;
+  width: 80%;
+  border: none;
+  height: 30px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.backFood__btn {
+  position: absolute;
+  right: 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 7px 14px;
+  top: -35px;
+  cursor: pointer;
+  border: none;
+}

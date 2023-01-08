@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Header from "./components/header/Header";
+import CardList from "./components/CardList/CardList";
+import ProductItem from "./components/ProductItem/ProductItem";
+import { useSelector, useDispatch } from "react-redux";
+import { calculateTotals } from "./store/slices/productSlice";
 
 function App() {
+  const [isProductOpen, setIsProductOpen] = useState(true);
+
+  const { productData } = useSelector((state) => state.product);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(calculateTotals());
+  }, [productData, dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header
+        isProductOpen={isProductOpen}
+        setIsProductOpen={setIsProductOpen}
+      />
+      <div className="app__body">
+        <CardList />
+        {isProductOpen && <ProductItem />}
+      </div>
     </div>
   );
 }
