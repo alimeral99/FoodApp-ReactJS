@@ -1,5 +1,5 @@
 import React from "react";
-import { selectProductData, removeItem } from "../../store/slices/productSlice";
+import { removeItem } from "../../store/slices/productSlice";
 import "./ProductItem.css";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -7,8 +7,8 @@ function ProductItem() {
   const dispatch = useDispatch();
   const { productData, total } = useSelector((store) => store.product);
 
-  const deleteProduct = (product) => {
-    dispatch(removeItem(product.id));
+  const deleteProduct = (id) => {
+    dispatch(removeItem(id));
   };
 
   const renderedProduct = productData.map((product) => (
@@ -19,7 +19,10 @@ function ProductItem() {
       <h2 className="product__title">{product.title}</h2>
       <p className="product__price">{product.price} $</p>
       <p>x {product.amount}</p>
-      <span className="delete__product" onClick={() => deleteProduct(product)}>
+      <span
+        className="delete__product"
+        onClick={() => deleteProduct(product.id)}
+      >
         X
       </span>
     </div>
