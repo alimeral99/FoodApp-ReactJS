@@ -5,5 +5,5 @@
 # Topics
 - React
 - Redux-Toolkit
-- Css Reponsive Design
+- Css Responsive Design
 
